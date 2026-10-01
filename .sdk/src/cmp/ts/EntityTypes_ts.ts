@@ -58,8 +58,10 @@ const EntityTypes = cmp(function EntityTypes(props: any) {
       Content(`export interface ${TypeName} {
 `)
       fields.forEach((f: any) => {
-        const opt = false === f.r ? '?' : ''
-        Content(`  ${propKey(f.n)}${opt}: ${canonToType(f.t, LANG)}
+        // Result requiredness differs from create-request requiredness.
+        const opt = false === (f.resultRequired ?? f.r) ? '?' : ''
+        const nullable = f.resultNullable === true ? ' | null' : ''
+        Content(`  ${propKey(f.n)}${opt}: ${canonToType(f.t, LANG)}${nullable}
 `)
       })
       Content(`}

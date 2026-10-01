@@ -18,7 +18,7 @@ export interface MapType {
   success?: boolean
   threatProtection?: Record<string, any>
   timeout?: number
-  url: string
+  url?: string
 }
 
 export interface MapCreateData {
@@ -36,52 +36,52 @@ export interface MapCreateData {
 }
 
 export interface Scrape {
-  actions?: any
-  answer?: string
-  audio?: string
+  actions?: any | null
+  answer?: string | null
+  audio?: string | null
   auditMetadata?: Record<string, any>
   blockAds?: boolean
-  blocks?: any[]
-  branding?: Record<string, any>
-  changeTracking?: Record<string, any>
+  blocks?: any[] | null
+  branding?: Record<string, any> | null
+  changeTracking?: Record<string, any> | null
   domainTools?: boolean
   excludeTags?: any[]
   formats?: any[]
   headers?: Record<string, any>
-  highlights?: string
-  html?: string
+  highlights?: string | null
+  html?: string | null
   includeTags?: any[]
   links?: any[]
   location?: Record<string, any>
   lockdown?: boolean
   markdown?: string
   maxAge?: number
-  menu?: Record<string, any>
+  menu?: Record<string, any> | null
   metadata?: Record<string, any>
   minAge?: number
   mobile?: boolean
   onlyCleanContent?: boolean
   onlyMainContent?: boolean
-  pages?: any[]
+  pages?: any[] | null
   parsers?: any[]
-  product?: Record<string, any>
+  product?: Record<string, any> | null
   profile?: Record<string, any>
   proxy?: string
-  rawBase64?: string
-  rawHtml?: string
+  rawBase64?: string | null
+  rawHtml?: string | null
   redactPII?: any
   removeBase64Images?: boolean
-  screenshot?: string
+  screenshot?: string | null
   skipTlsVerification?: boolean
   storeInCache?: boolean
-  summary?: string
+  summary?: string | null
   threatProtection?: Record<string, any>
   timeout?: number
-  tools?: any[]
-  url: string
-  video?: string
+  tools?: any[] | null
+  url?: string
+  video?: string | null
   waitFor?: number
-  warning?: string
+  warning?: string | null
   zeroDataRetention?: boolean
 }
 
