@@ -1,0 +1,382 @@
+# Entity: scrape
+
+main: kit: entity: scrape: {
+
+  alias: field: {}
+
+  fields: {
+    actions: {
+      h: "Actions"
+      n: "actions"
+      r: false
+      sh: "Results of the actions specified in the `actions` parameter."
+      t: "`$OBJECT`"
+    }
+    answer: {
+      h: "Answer"
+      n: "answer"
+      r: false
+      sh: "Natural-language answer to the question supplied via the `question` format."
+      t: "`$STRING`"
+    }
+    audio: {
+      h: "Audio"
+      n: "audio"
+      r: false
+      sh: "Signed URL to the extracted MP3 audio file if `audio` is in `formats`."
+      t: "`$STRING`"
+    }
+    auditMetadata: {
+      h: "Audit Metadata"
+      n: "auditMetadata"
+      r: true
+      sh: "User attribution included with SIEM logging events when SIEM Logging is enabled for the organization."
+      t: "`$OBJECT`"
+    }
+    blockAds: {
+      h: "Block Ads"
+      n: "blockAds"
+      r: false
+      sh: "Enables ad-blocking and cookie popup blocking."
+      t: "`$BOOLEAN`"
+    }
+    blocks: {
+      h: "Blocks"
+      n: "blocks"
+      r: false
+      sh: "Per-page typed layout blocks for PDFs."
+      t: "`$ARRAY`"
+    }
+    branding: {
+      h: "Branding"
+      n: "branding"
+      r: false
+      sh: "Branding information extracted from the page if `branding` is in `formats`."
+      t: "`$OBJECT`"
+    }
+    changeTracking: {
+      h: "Change Tracking"
+      n: "changeTracking"
+      r: false
+      sh: "Change tracking information if `changeTracking` is in `formats`."
+      t: "`$OBJECT`"
+    }
+    domainTools: {
+      h: "Domain Tools"
+      n: "domainTools"
+      r: false
+      sh: "When true on an ordinary URL scrape, `data.tools` lists tool contracts matched to the scraped page's domain (same `DiscoveredTool` shape as search)."
+      t: "`$BOOLEAN`"
+    }
+    excludeTags: {
+      h: "Exclude Tags"
+      n: "excludeTags"
+      r: false
+      sh: "Tags to exclude from the output."
+      t: "`$ARRAY`"
+    }
+    formats: {
+      h: "Formats"
+      n: "formats"
+      r: false
+      sh: "Output formats to include in the response."
+      t: "`$ARRAY`"
+      union: {
+        branches: 17
+        count: 1
+        depth: 1
+      }
+    }
+    headers: {
+      h: "Headers"
+      n: "headers"
+      r: false
+      sh: "Headers to send with the request."
+      t: "`$OBJECT`"
+    }
+    highlights: {
+      h: "Highlights"
+      n: "highlights"
+      r: false
+      sh: "Relevant source text selected by the `highlights` format."
+      t: "`$STRING`"
+    }
+    html: {
+      h: "Html"
+      n: "html"
+      r: false
+      sh: "Cleaned HTML of the page if `html` is in `formats`."
+      t: "`$STRING`"
+    }
+    includeTags: {
+      h: "Include Tags"
+      n: "includeTags"
+      r: false
+      sh: "Tags to include in the output."
+      t: "`$ARRAY`"
+    }
+    links: {
+      h: "Links"
+      n: "links"
+      r: false
+      sh: "List of links on the page if `links` is in `formats`"
+      t: "`$ARRAY`"
+    }
+    location: {
+      h: "Location"
+      n: "location"
+      r: false
+      sh: "Location settings for the request."
+      t: "`$OBJECT`"
+    }
+    lockdown: {
+      h: "Lockdown"
+      n: "lockdown"
+      r: false
+      sh: "If true, serves the request from Firecrawl's cache only and never makes an outbound request to the target URL."
+      t: "`$BOOLEAN`"
+    }
+    markdown: {
+      h: "Markdown"
+      n: "markdown"
+      r: false
+      t: "`$STRING`"
+    }
+    maxAge: {
+      h: "Max Age"
+      n: "maxAge"
+      r: false
+      sh: "Returns a cached version of the page if it is younger than this age in milliseconds."
+      t: "`$INTEGER`"
+    }
+    menu: {
+      h: "Menu"
+      n: "menu"
+      r: true
+      sh: "Menu information extracted from the page if `menu` is in `formats`."
+      t: "`$OBJECT`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 5
+        depth: 2
+      }
+    }
+    minAge: {
+      h: "Min Age"
+      n: "minAge"
+      r: false
+      sh: "When set, the request only checks the cache and never triggers a fresh scrape."
+      t: "`$INTEGER`"
+    }
+    mobile: {
+      h: "Mobile"
+      n: "mobile"
+      r: false
+      sh: "Set to true if you want to emulate scraping from a mobile device."
+      t: "`$BOOLEAN`"
+    }
+    onlyCleanContent: {
+      h: "Only Clean Content"
+      n: "onlyCleanContent"
+      r: false
+      sh: "Beta."
+      t: "`$BOOLEAN`"
+    }
+    onlyMainContent: {
+      h: "Only Main Content"
+      n: "onlyMainContent"
+      r: false
+      sh: "Only return the main content of the page excluding headers, navs, footers, etc."
+      t: "`$BOOLEAN`"
+    }
+    pages: {
+      h: "Pages"
+      n: "pages"
+      r: false
+      sh: "Physical per-page markdown for PDFs."
+      t: "`$ARRAY`"
+    }
+    parsers: {
+      h: "Parsers"
+      n: "parsers"
+      r: false
+      sh: "Controls how files are processed during scraping."
+      t: "`$ARRAY`"
+    }
+    product: {
+      h: "Product"
+      n: "product"
+      r: true
+      sh: "Product information extracted from the page if `product` is in `formats`."
+      t: "`$OBJECT`"
+    }
+    profile: {
+      h: "Profile"
+      n: "profile"
+      r: true
+      sh: "Enable persistent browser storage across scrape and interact sessions."
+      t: "`$OBJECT`"
+    }
+    proxy: {
+      h: "Proxy"
+      n: "proxy"
+      r: false
+      sh: "Specifies the type of proxy to use."
+      t: "`$STRING`"
+    }
+    rawBase64: {
+      h: "Raw Base64"
+      n: "rawBase64"
+      r: false
+      sh: "The Base64-encoded original HTTP response body if `rawBase64` is in `formats`."
+      t: "`$STRING`"
+    }
+    rawHtml: {
+      h: "Raw Html"
+      n: "rawHtml"
+      r: false
+      sh: "The exact, unmodified HTML as received from the page if `rawHtml` is in `formats`."
+      t: "`$STRING`"
+    }
+    redactPII: {
+      h: "Redact Pii"
+      n: "redactPII"
+      r: false
+      sh: "Redact personally identifiable information from returned markdown."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    removeBase64Images: {
+      h: "Remove Base64 Images"
+      n: "removeBase64Images"
+      r: false
+      sh: "Removes all base 64 images from the markdown output, which may be overwhelmingly long."
+      t: "`$BOOLEAN`"
+    }
+    screenshot: {
+      h: "Screenshot"
+      n: "screenshot"
+      r: false
+      sh: "Screenshot of the page if `screenshot` is in `formats`."
+      t: "`$STRING`"
+    }
+    skipTlsVerification: {
+      h: "Skip Tls Verification"
+      n: "skipTlsVerification"
+      r: false
+      sh: "Skip TLS certificate verification when making requests."
+      t: "`$BOOLEAN`"
+    }
+    storeInCache: {
+      h: "Store In Cache"
+      n: "storeInCache"
+      r: false
+      sh: "If true, the page will be stored in the Firecrawl index and cache."
+      t: "`$BOOLEAN`"
+    }
+    summary: {
+      h: "Summary"
+      n: "summary"
+      r: false
+      sh: "Summary of the page if `summary` is in `formats`"
+      t: "`$STRING`"
+    }
+    threatProtection: {
+      h: "Threat Protection"
+      n: "threatProtection"
+      r: false
+      sh: "Per-request [Threat Protection](https://docs.firecrawl.dev/features/threat-protection) override."
+      t: "`$OBJECT`"
+    }
+    timeout: {
+      h: "Timeout"
+      n: "timeout"
+      r: false
+      sh: "Timeout in milliseconds for the request."
+      t: "`$INTEGER`"
+    }
+    tools: {
+      h: "Tools"
+      n: "tools"
+      r: false
+      sh: "Tool contracts matched to the scraped page's domain."
+      t: "`$ARRAY`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The URL to scrape"
+      t: "`$STRING`"
+    }
+    video: {
+      h: "Video"
+      n: "video"
+      r: false
+      sh: "Signed URL to the extracted video file if `video` is in `formats`."
+      t: "`$STRING`"
+    }
+    waitFor: {
+      h: "Wait For"
+      n: "waitFor"
+      r: false
+      sh: "Specify a delay in milliseconds before fetching the content, allowing the page sufficient time to load."
+      t: "`$INTEGER`"
+    }
+    warning: {
+      h: "Warning"
+      n: "warning"
+      r: false
+      sh: "Can be displayed when using LLM Extraction."
+      t: "`$STRING`"
+    }
+    zeroDataRetention: {
+      h: "Zero Data Retention"
+      n: "zeroDataRetention"
+      r: false
+      sh: "If true, this will enable zero data retention for this scrape."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "scrape"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /scrape"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/scrape"
+          s: [
+            {
+              lit: "scrape"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,32 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        email: "support@firecrawl.dev"
+        name: "Firecrawl Support"
+        url: "https://firecrawl.dev/support"
+      }
+      description: "API for interacting with Firecrawl services to perform web scraping and crawling tasks."
+      security: {
+        in: "header"
+        name: "Authorization"
+        prefix: "Bearer"
+        scheme: "bearerAuth"
+        type: "http"
+      }
+      servers: [
+        {
+          url: "https://api.firecrawl.dev/v2"
+        }
+      ]
+      summary: "API for interacting with Firecrawl services to perform web scraping and crawling tasks."
+      title: "Firecrawl Scrape and Map API"
+      version: "v2"
+      website: "https://firecrawl.dev"
+    }
+  }
+}
+

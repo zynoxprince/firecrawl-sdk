@@ -1,0 +1,129 @@
+# Entity: map
+
+main: kit: entity: map: {
+
+  alias: field: {}
+
+  fields: {
+    auditMetadata: {
+      h: "Audit Metadata"
+      n: "auditMetadata"
+      r: true
+      sh: "User attribution included with SIEM logging events when SIEM Logging is enabled for the organization."
+      t: "`$OBJECT`"
+    }
+    ignoreCache: {
+      h: "Ignore Cache"
+      n: "ignoreCache"
+      r: false
+      sh: "Bypass the sitemap cache to retrieve fresh URLs."
+      t: "`$BOOLEAN`"
+    }
+    ignoreQueryParameters: {
+      h: "Ignore Query Parameters"
+      n: "ignoreQueryParameters"
+      r: false
+      sh: "Do not return URLs with query parameters"
+      t: "`$BOOLEAN`"
+    }
+    includeSubdomains: {
+      h: "Include Subdomains"
+      n: "includeSubdomains"
+      r: false
+      sh: "Include subdomains of the website"
+      t: "`$BOOLEAN`"
+    }
+    limit: {
+      h: "Limit"
+      n: "limit"
+      r: false
+      sh: "Maximum number of links to return"
+      t: "`$INTEGER`"
+    }
+    links: {
+      h: "Links"
+      n: "links"
+      r: false
+      t: "`$ARRAY`"
+    }
+    location: {
+      h: "Location"
+      n: "location"
+      r: false
+      sh: "Location settings for the request."
+      t: "`$OBJECT`"
+    }
+    search: {
+      h: "Search"
+      n: "search"
+      r: false
+      sh: "Specify a search query to order the results by relevance."
+      t: "`$STRING`"
+    }
+    sitemap: {
+      h: "Sitemap"
+      n: "sitemap"
+      r: false
+      sh: "Sitemap mode when mapping."
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    threatProtection: {
+      h: "Threat Protection"
+      n: "threatProtection"
+      r: false
+      sh: "Per-request [Threat Protection](https://docs.firecrawl.dev/features/threat-protection) override."
+      t: "`$OBJECT`"
+    }
+    timeout: {
+      h: "Timeout"
+      n: "timeout"
+      r: false
+      sh: "Timeout in milliseconds."
+      t: "`$INTEGER`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The base URL to start crawling from"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "map"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /map"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/map"
+          s: [
+            {
+              lit: "map"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

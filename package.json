@@ -1,0 +1,25 @@
+{
+  "name": "firecrawl-sdk-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Unofficial Firecrawl client generated with Voxgig",
+  "license": "MIT",
+  "workspaces": [
+    "ts"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "npm --prefix ts run build",
+    "test": "npm --prefix ts test && node --test test/*.test.mjs && npm run test:types",
+    "test:live": "node --env-file-if-exists=.env examples/live-check.mjs",
+    "generate": "node scripts/prepare-spec.mjs && npm --prefix .sdk run generate",
+    "doctor": "npm --prefix .sdk run doctor",
+    "test:types": "tsc --noEmit --strict --skipLibCheck --module commonjs --target es2022 test/types.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/node": "^25.6.0"
+  }
+}

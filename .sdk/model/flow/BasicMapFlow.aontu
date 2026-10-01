@@ -1,0 +1,18 @@
+# BasicMapFlow
+
+main: kit: flow: BasicMapFlow:
+{
+  entity: "map",
+  kind: "basic",
+  name: "BasicMapFlow",
+  step: [
+    {
+      i: {
+        ref: "map_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicMapFlow"
+}

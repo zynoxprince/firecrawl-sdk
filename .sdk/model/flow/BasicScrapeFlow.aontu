@@ -1,0 +1,18 @@
+# BasicScrapeFlow
+
+main: kit: flow: BasicScrapeFlow:
+{
+  entity: "scrape",
+  kind: "basic",
+  name: "BasicScrapeFlow",
+  step: [
+    {
+      i: {
+        ref: "scrape_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicScrapeFlow"
+}
