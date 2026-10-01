@@ -68,7 +68,7 @@ npm run doctor
 
 The toolchain and its dependencies are pinned by `.sdk/package-lock.json`. The original upstream specification is saved in `spec/firecrawl-v2.upstream.json`; `scripts/prepare-spec.mjs` selects `/scrape` and `/map`, normalizes the scrape request's top-level `allOf`, and selects the ordinary URL-scrape response. Alexandria tool execution and other endpoints are outside this release's scope.
 
-The model hook in `.sdk/build/request-fields.js` corrects nested required flags and excludes response-only fields from create payloads. The customized `EntityTypes_ts` generator component keeps result requiredness separate from request requiredness and preserves nullable result fields. `npm run doctor` reports this intentional component customization.
+The model hook in `.sdk/build/request-fields.js` corrects nested required flags and excludes response-only fields from create payloads. The customized `EntityTypes_ts` generator component keeps result requiredness separate from request requiredness and preserves nullable result fields. `npm run doctor` reports this intentional component customization. The final generation step copies the reviewed root README and license into the TypeScript package, keeping setup instructions and attribution consistent.
 
 Edit the model in `.sdk/model/` or the generator's source templates, then regenerate. Do not hand-edit generated files in `ts/`.
 

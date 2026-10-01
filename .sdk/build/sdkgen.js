@@ -1,6 +1,7 @@
 
 const { SdkGen } = require('@voxgig/sdkgen')
 const { correctRequestFields } = require('./request-fields')
+const { writeProjectDocs } = require('./project-docs')
 
 const config = {
   root: __dirname+'/../dist/Root.js',
@@ -21,7 +22,9 @@ const config = {
 module.exports = SdkGen.makeBuild(config).then((generate) => {
   const build = async (model, ...args) => {
     correctRequestFields(model)
-    return generate(model, ...args)
+    const result = await generate(model, ...args)
+    await writeProjectDocs()
+    return result
   }
   build.step = generate.step
   return build
